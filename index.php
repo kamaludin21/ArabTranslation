@@ -5,12 +5,15 @@ use Stichoza\GoogleTranslate\TranslateClient;
 ?>
 <html>
 <head>
+  <title>Home</title>
+  <link rel="icon" href="images/icon.png">
   <link rel="stylesheet" href="bulma/css/bulma.min.css">
   <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+
 </head>
 
 <body>
-  <section class="hero is-primary is-bold">
+  <section class="hero is-primary is-bold" style="margin-bottom:10px;">
   <div class="hero-body">
     <div class="container">
       <h1 class="title">
@@ -27,17 +30,21 @@ use Stichoza\GoogleTranslate\TranslateClient;
     <form method="post" action="">
       <div class="columns">
         <div class="column">
-          <h3>Indonesia</h3>
+          <div class="media" style="margin-bottom: 14px;">
+
+            <h3>Indonesia</h3>
+          </div>
           <textarea class="textarea is-info" id="id" name="id">
 
           </textarea>
 
-          <button name="button" class="button is-primary">Terjemahkan file</button>
+          <p class="content is-small" >Ketik teks atau <a href="#" >Terjemahkan file <i class="fa fa-upload" aria-hidden="true" style="padding-left: 3px;"></i></a></p>
+
 
         </div>
         <div class="column">
 
-          <div class="media">
+          <div class="media" style="margin-bottom: 10px;">
             <div class="media-left">
               <h5>Arab</h5>
             </div>
@@ -69,9 +76,9 @@ use Stichoza\GoogleTranslate\TranslateClient;
   <script type="text/javascript">
     function myFunction(){
       var indo = document.getElementById("id").value;
-      var arab = document.getElementById("ar");
+      var arab = document.getElementById("ar").value;
 
-      document.getElementById("demo").innerHTML = indo;
+      document.getElementById("demo").innerHTML = arab;
 
 
 
