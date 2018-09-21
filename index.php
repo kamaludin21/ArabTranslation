@@ -10,6 +10,19 @@ use Stichoza\GoogleTranslate\TranslateClient;
 </head>
 
 <body>
+  <section class="hero is-primary is-bold">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Arabic Translation
+      </h1>
+      <h2 class="subtitle">
+        Selamat Datang
+      </h2>
+    </div>
+  </div>
+</section>
+
   <div class="container">
     <form method="post" action="">
       <div class="columns">
@@ -18,6 +31,8 @@ use Stichoza\GoogleTranslate\TranslateClient;
           <textarea class="textarea is-info" id="id" name="id">
 
           </textarea>
+
+          <button name="button" class="button is-primary">Terjemahkan file</button>
 
         </div>
         <div class="column">
@@ -34,8 +49,8 @@ use Stichoza\GoogleTranslate\TranslateClient;
           <textarea class="textarea is-success" id="ar" name="ar">
             <?php
                 if(isset($_POST['translate'])){
-                    $sourceLang = "id";
-                    $targetLang = "ar";
+                    // $sourceLang = "id";
+                    // $targetLang = "ar";
                     $sourceText = $_POST['id'];
                     $tr = new TranslateClient("id","ar");
                     $tr->setUrlBase('https://translate.googleapis.com/translate_a/single');
