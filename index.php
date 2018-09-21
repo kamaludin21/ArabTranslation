@@ -6,7 +6,7 @@ use Stichoza\GoogleTranslate\TranslateClient;
 <html>
 <head>
   <title>Home</title>
-  <link rel="icon" href="images/icon.png">
+  <link rel="icon" href="images/arabic-icon.png">
   <link rel="stylesheet" href="bulma/css/bulma.min.css">
   <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
 
