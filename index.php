@@ -9,7 +9,13 @@ use Stichoza\GoogleTranslate\TranslateClient;
   <link rel="icon" href="images/arabic-icon.png">
   <link rel="stylesheet" href="bulma/css/bulma.min.css">
   <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
-
+  <style >
+    @font-face {
+      font-family: Roboto;
+      src: url(font/RobotoMono-Medium.ttf);
+    }
+    
+  </style>
 </head>
 
 <body>
@@ -42,7 +48,7 @@ use Stichoza\GoogleTranslate\TranslateClient;
           </textarea>
 
           <p class="content is-small" >Ketik teks atau <a href="#" >Terjemahkan file <i class="fa fa-upload" aria-hidden="true" style="padding-left: 3px;"></i></a></p>
-        </div>      
+        </div>
         <div class="column">
 
           <div class="media" style="margin-bottom: -15px;">
