@@ -14,7 +14,7 @@ use Stichoza\GoogleTranslate\TranslateClient;
       font-family: Roboto;
       src: url(font/RobotoMono-Medium.ttf);
     }
-    
+
   </style>
 </head>
 
@@ -36,26 +36,27 @@ use Stichoza\GoogleTranslate\TranslateClient;
 
     <form method="post" action="">
       <div class="columns">
+
         <div class="column">
           <div class="media" style="margin-bottom: 10px;">
             <div class="buttons has-addons">
-              <button class="button is-info is-selected">Indonesia</button>
-              <button class="button">Arab</button>
+              <button class="button is-info is-selected" id="btn-ind" onclick="changeLangInd()">Indonesia</button>
+              <button class="button" id="btn-ar" onclick="changeLangAr()">Arab</button>
             </div>
           </div>
-          <textarea class="textarea is-info" id="id" name="id">
 
-          </textarea>
+          <textarea class="textarea is-info" id="textareaLang" name="ar"></textarea>
 
           <p class="content is-small" >Ketik teks atau <a href="#" >Terjemahkan file <i class="fa fa-upload" aria-hidden="true" style="padding-left: 3px;"></i></a></p>
         </div>
+
         <div class="column">
 
           <div class="media" style="margin-bottom: -15px;">
 
               <div class="buttons has-addons is-left">
-                <button class="button">Indonesia</button>
-                <button class="button is-info is-selected">Arab</button>
+                <button class="button" id="btn-ind2">Indonesia</button>
+                <button class="button is-info is-selected" id="btn-ar2">Arab</button>
               </div>
               <div class="buttons" style="margin-left: 30px;">
                 <button class="button is-info" id="translate" name="translate" onclick="myFunction()">Terjemahkan</button>
@@ -63,21 +64,32 @@ use Stichoza\GoogleTranslate\TranslateClient;
 
           </div>
 
-          <textarea class="textarea is-success" id="ar" name="ar">
+          <textarea class="textarea is-success">
             <?php
                 if(isset($_POST['translate'])){
                     // $sourceLang = "id";
                     // $targetLang = "ar";
-                    $sourceText = $_POST['id'];
-                    $tr = new TranslateClient("id","ar");
-                    $tr->setUrlBase('https://translate.googleapis.com/translate_a/single');
-                    $hasil = $tr->translate($sourceText);
-                    echo "$hasil";
+                    if (isset($_POST['id'])) {
+                      // code...
+                      $sourceText = $_POST['id'];
+                      $tr = new TranslateClient("id","ar");
+                      $tr->setUrlBase('https://translate.googleapis.com/translate_a/single');
+                      $hasil = $tr->translate($sourceText);
+                      echo "$hasil";
+                    }
+                    elseif (isset($_POST['ar'])) {
+                      // code...
+                      $sourceText = $_POST['ar'];
+                      $tr = new TranslateClient("ar","id");
+                      $tr->setUrlBase('https://translate.googleapis.com/translate_a/single');
+                      $hasil = $tr->translate($sourceText);
+                      echo "$hasil";
+                    }
                 }
                 ?>
           </textarea>
 
-          <p id="demo"></p>
+          <!-- <p id="demo"></p> -->
 
         </div>
       </div>
@@ -85,16 +97,6 @@ use Stichoza\GoogleTranslate\TranslateClient;
     </form>
 
   </div>
-  <script type="text/javascript">
-    function myFunction(){
-      var indo = document.getElementById("id").value;
-      var arab = document.getElementById("ar").value;
-
-      document.getElementById("demo").innerHTML = indo;
-
-
-
-    }
-  </script>
+  <script src="main.js"></script>
 </body>
 </html>
