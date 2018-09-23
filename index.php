@@ -40,8 +40,8 @@ use Stichoza\GoogleTranslate\TranslateClient;
         <div class="column">
           <div class="media" style="margin-bottom: 10px;">
             <div class="buttons has-addons">
-              <button class="button is-info is-selected" id="btn-ind" onclick="changeLangInd()">Indonesia</button>
-              <button class="button" id="btn-ar" onclick="changeLangAr()">Arab</button>
+              <button class="button is-info is-selected" id="btn-ind" >Indonesia</button>
+              <button class="button" id="btn-ar" >Arab</button>
             </div>
           </div>
 
@@ -69,7 +69,7 @@ use Stichoza\GoogleTranslate\TranslateClient;
                 if(isset($_POST['translate'])){
                     // $sourceLang = "id";
                     // $targetLang = "ar";
-                    if (isset($_POST['id'])) {
+                    if (isset($_POST['id'])) {//jika yg dipilih bahasa Indonesia
                       // code...
                       $sourceText = $_POST['id'];
                       $tr = new TranslateClient("id","ar");
@@ -77,7 +77,7 @@ use Stichoza\GoogleTranslate\TranslateClient;
                       $hasil = $tr->translate($sourceText);
                       echo "$hasil";
                     }
-                    elseif (isset($_POST['ar'])) {
+                    elseif (isset($_POST['ar'])) {//jika yg dipilih bahasa Arab
                       // code...
                       $sourceText = $_POST['ar'];
                       $tr = new TranslateClient("ar","id");
