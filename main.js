@@ -11,16 +11,22 @@
 //   }
 // }
 
-document.getElementById("btn-ind").addEventListener("click", changeLangInd);
+document.getElementById("sourceLang").addEventListener("click", changeLangInd);
 
 function changeLangInd(){
-  document.getElementById("btn-ind").className = "button is-info is-selected";
-  document.getElementById("btn-ar").className = "button";
+
+  var Lang = document.querySelector("#sourceLang").id;
+
+  if (Lang == "Indonesia") {
+    alert("Berhasil");
+  }
+  // document.getElementById("btn-ind").className = "button is-info is-selected";
+  // document.getElementById("btn-ar").className = "button";
 }
 
-document.getElementById("btn-ar").addEventListener("click", changeLangAr);
-
-function changeLangAr(){
-  document.getElementById("btn-ar").className = "button is-info is-selected";
-  document.getElementById("btn-ind").className = "button";
-}
+// document.getElementById("btn-ar").addEventListener("click", changeLangAr);
+//
+// function changeLangAr(){
+//   document.getElementById("btn-ar").className = "button is-info is-selected";
+//   document.getElementById("btn-ind").className = "button";
+// }

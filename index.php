@@ -19,6 +19,23 @@ use Stichoza\GoogleTranslate\TranslateClient;
 </head>
 
 <body>
+
+  <!-- kode session -->
+  <?php
+  if (isset($_POST['translate'])):
+    // code...
+    $_SESSION['pos'] = $_POST;
+  endif;
+
+  if (isset($_SESSION['pos'])):
+    // code...
+    $teks = $_SESSION['pos']['id'];
+  else:
+    $teks = '';
+  endif;
+
+   ?>
+
   <section class="hero is-primary is-bold" style="margin-bottom:10px;">
   <div class="hero-body">
     <div class="container">
@@ -43,9 +60,12 @@ use Stichoza\GoogleTranslate\TranslateClient;
               <button class="button is-info is-selected" id="btn-ind" >Indonesia</button>
               <button class="button" id="btn-ar" >Arab</button>
             </div>
+            
           </div>
 
-          <textarea class="textarea is-info" id="textareaLang" name="ar"></textarea>
+          <textarea class="textarea is-info" id="textareaLang" name="id">
+            <?php echo $teks; ?>
+          </textarea>
 
           <p class="content is-small" >Ketik teks atau <a href="#" >Terjemahkan file <i class="fa fa-upload" aria-hidden="true" style="padding-left: 3px;"></i></a></p>
         </div>
@@ -88,6 +108,8 @@ use Stichoza\GoogleTranslate\TranslateClient;
                 }
                 ?>
           </textarea>
+
+          <button class="button is-small" style="margin-top: 5px; float: right;"><i class="fa fa-edit"></i> Saran edit</button>
 
           <!-- <p id="demo"></p> -->
 
