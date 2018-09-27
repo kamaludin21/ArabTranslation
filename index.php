@@ -2,6 +2,7 @@
 <?php
 require 'vendor/autoload.php';
 use Stichoza\GoogleTranslate\TranslateClient;
+
 ?>
 <html>
 <head>
@@ -56,11 +57,11 @@ use Stichoza\GoogleTranslate\TranslateClient;
 
         <div class="column">
           <div class="media" style="margin-bottom: 10px;">
-            <div class="buttons has-addons">
-              <button class="button is-info is-selected" id="btn-ind" >Indonesia</button>
-              <button class="button" id="btn-ar" >Arab</button>
+            <div class="buttons has-addons" id="divBtn">
+              <button class="button is-info is-selected" id="btn-ind" onclick="functionInd()" >Indonesia</button>
+              <button class="button" id="btn-ar" onclick="functionArb()">Arab</button>
             </div>
-            
+
           </div>
 
           <textarea class="textarea is-info" id="textareaLang" name="id">
@@ -68,6 +69,19 @@ use Stichoza\GoogleTranslate\TranslateClient;
           </textarea>
 
           <p class="content is-small" >Ketik teks atau <a href="#" >Terjemahkan file <i class="fa fa-upload" aria-hidden="true" style="padding-left: 3px;"></i></a></p>
+
+          <p id="demo">TEST JS!</p>
+
+          <?php
+          //Parse pdf file and build necessary objects.
+          $parser = new \Smalot\PdfParser\Parser();
+          $pdf    = $parser->parseFile('pdffile/document.pdf');
+
+          $text = $pdf->getText();
+          echo $text;
+            ?>
+
+
         </div>
 
         <div class="column">

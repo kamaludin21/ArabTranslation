@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Stichoza\\GoogleTranslate\\' => array($vendorDir . '/stichoza/google-translate-php/src'),
+    'Smalot\\PdfParser\\' => array($vendorDir . '/smalot/pdfparser/src'),
 );

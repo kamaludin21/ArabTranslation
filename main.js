@@ -1,32 +1,24 @@
-// function changeLang(){
-//   var btnInd = document.querySelector("#btn-ind").id;
-//   var btnAr = document.querySelector("#btn-ar").id;
-//
-//   if (btnInd == "btn-ind") {
-//
-//     document.getElementById("btn-ind").className = "button is-info is-selected";
-//   }
-//   else if (btn) {
-//
-//   }
-// }
-
-document.getElementById("sourceLang").addEventListener("click", changeLangInd);
-
-function changeLangInd(){
-
-  var Lang = document.querySelector("#sourceLang").id;
-
-  if (Lang == "Indonesia") {
-    alert("Berhasil");
-  }
-  // document.getElementById("btn-ind").className = "button is-info is-selected";
-  // document.getElementById("btn-ar").className = "button";
+var header = document.getElementById("divBtn");
+var btns = header.getElementsByClassName("button");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("is-info is-selected");
+    if (current.length > 0) {
+      current[0].className = current[0].className.replace(" is-info is-selected", "");
+    }
+    this.className += " is-info is-selected";
+  });
 }
 
-// document.getElementById("btn-ar").addEventListener("click", changeLangAr);
-//
-// function changeLangAr(){
-//   document.getElementById("btn-ar").className = "button is-info is-selected";
-//   document.getElementById("btn-ind").className = "button";
-// }
+function functionInd() {
+  var x = document.getElementById("btn-ind");
+  var y = document.getElementById("demo");
+  y.innerHTML = "INDONESIA";
+
+}
+
+function functionArb() {
+  var y = document.getElementById("demo");
+  var z = document.getElementById("btn-ar");
+  y.innerHTML = "ARAB";
+}
