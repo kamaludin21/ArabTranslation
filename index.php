@@ -28,9 +28,12 @@ use Stichoza\GoogleTranslate\TranslateClient;
     $_SESSION['pos'] = $_POST;
   endif;
 
-  if (isset($_SESSION['pos'])):
+  if (isset($_SESSION['pos']['id'])):
     // code...
     $teks = $_SESSION['pos']['id'];
+  elseif (isset($_SESSION['pos']['ar'])):
+    // code...
+    $teks = $_SESSION['pos']['ar'];
   else:
     $teks = '';
   endif;
@@ -89,8 +92,8 @@ use Stichoza\GoogleTranslate\TranslateClient;
           <div class="media" style="margin-bottom: -15px;">
 
               <div class="buttons has-addons is-left">
-                <button class="button" id="btn-ind2">Indonesia</button>
-                <button class="button is-info is-selected" id="btn-ar2">Arab</button>
+                <a class="button" id="btn-ind2">Indonesia</a>
+                <a class="button is-info is-selected" id="btn-ar2">Arab</a>
               </div>
               <div class="buttons" style="margin-left: 30px;">
                 <button class="button is-info" id="translate" name="translate" onclick="myFunction()">Terjemahkan</button>

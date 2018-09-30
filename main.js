@@ -14,11 +14,25 @@ for (var i = 0; i < btns.length; i++) {
 function functionInd() {
   var x = document.getElementById("btn-ind");
   var y = document.getElementById("demo");
+  var x2 = document.getElementById("btn-ind2");
+  var z2 = document.getElementById("btn-ar2");
+  document.getElementById("textareaLang").name = "id";
+
+  x2.classList.remove("is-info");
+  z2.classList.add("is-info");
+
   y.innerHTML = "INDONESIA";
 }
 
 function functionArb() {
   var y = document.getElementById("demo");
   var z = document.getElementById("btn-ar");
+  var x2 = document.getElementById("btn-ind2");
+  var z2 = document.getElementById("btn-ar2");
+  document.getElementById("textareaLang").name = "ar";
+
+  x2.classList.add("is-info");
+  z2.classList.remove("is-info");
+
   y.innerHTML = "ARAB";
 }
