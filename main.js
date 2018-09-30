@@ -7,6 +7,7 @@ for (var i = 0; i < btns.length; i++) {
       current[0].className = current[0].className.replace(" is-info is-selected", "");
     }
     this.className += " is-info is-selected";
+
   });
 }
 
@@ -14,7 +15,6 @@ function functionInd() {
   var x = document.getElementById("btn-ind");
   var y = document.getElementById("demo");
   y.innerHTML = "INDONESIA";
-
 }
 
 function functionArb() {

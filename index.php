@@ -58,8 +58,8 @@ use Stichoza\GoogleTranslate\TranslateClient;
         <div class="column">
           <div class="media" style="margin-bottom: 10px;">
             <div class="buttons has-addons" id="divBtn">
-              <button class="button is-info is-selected" id="btn-ind" onclick="functionInd()" >Indonesia</button>
-              <button class="button" id="btn-ar" onclick="functionArb()">Arab</button>
+              <a class="button is-info is-selected" id="btn-ind" onclick="functionInd()" >Indonesia</a>
+              <a class="button" id="btn-ar" onclick="functionArb()">Arab</a>
             </div>
 
           </div>
